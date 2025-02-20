@@ -48,10 +48,6 @@ vis.add_geometry(pcd2)
 vis.run()
 vis.destroy_window()
 
-
-
-
-
 # '''
 # 两点云文件上下显示
 # '''
@@ -227,7 +223,6 @@ vis.destroy_window()
 # # 运行可视化
 # vis.run()
 # vis.destroy_window()
-
 
 
 #

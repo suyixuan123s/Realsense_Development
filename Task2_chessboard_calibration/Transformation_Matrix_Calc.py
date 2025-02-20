@@ -1,3 +1,11 @@
+"""
+Author: Yixuan Su
+Date: 2025/02/20 14:53
+File: Transformation_Matrix_Calc.py
+Description:
+
+"""
+
 import numpy as np
 
 
@@ -49,4 +57,3 @@ if __name__ == "__main__":
         f.write("Transformation Matrix from Camera Coordinate System to Table Coordinate System:\n")
         f.write(str(camera_to_table))
     print(f"Transformation matrix saved to {file_name}")
-

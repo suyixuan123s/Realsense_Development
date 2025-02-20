@@ -1,6 +1,15 @@
+"""
+Author: Yixuan Su
+Date: 2025/02/20 14:53
+File: calibrate_camera.py
+Description:
+
+"""
+
 import numpy as np
 import cv2
 import os
+
 
 def get_transformation_matrix(rvec, tvec):
     """
@@ -18,6 +27,7 @@ def get_transformation_matrix(rvec, tvec):
     transformation_matrix[:3, 3] = tvec.flatten()
 
     return transformation_matrix
+
 
 def calibrate_camera(images_dir, chessboard_size, square_size):
     """
@@ -60,7 +70,8 @@ def calibrate_camera(images_dir, chessboard_size, square_size):
     cv2.destroyAllWindows()
 
     # 标定相机，计算内参和畸变系数
-    ret, camera_matrix, dist_coeffs, rvecs, tvecs = cv2.calibrateCamera(obj_points_list, img_points_list, gray.shape[::-1], None, None)
+    ret, camera_matrix, dist_coeffs, rvecs, tvecs = cv2.calibrateCamera(obj_points_list, img_points_list,
+                                                                        gray.shape[::-1], None, None)
 
     # 打印相机内参和畸变系数
     print("Camera Matrix:\n", camera_matrix)
@@ -74,6 +85,7 @@ def calibrate_camera(images_dir, chessboard_size, square_size):
         print(f"Transformation Matrix for Image {len(transformation_matrices)}:\n", transformation_matrix)
 
     return camera_matrix, dist_coeffs, transformation_matrices
+
 
 # 示例使用
 if __name__ == '__main__':

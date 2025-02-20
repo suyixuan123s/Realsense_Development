@@ -1,6 +1,15 @@
+"""
+Author: Yixuan Su
+Date: 2025/02/20 14:53
+File: Transformation_Matrix_Camera_to_Chessboard.py
+Description:
+
+"""
+
 import numpy as np
 import cv2
 import os
+
 
 def calibrate_camera_and_find_transform(image_path, chessboard_size, square_size, camera_matrix, dist_coeffs):
     """
@@ -66,6 +75,7 @@ def calibrate_camera_and_find_transform(image_path, chessboard_size, square_size
     cv2.destroyAllWindows()
 
     return transformation_camera_to_board
+
 
 # 示例使用
 if __name__ == '__main__':

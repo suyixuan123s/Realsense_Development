@@ -1,7 +1,7 @@
 """
 Author: Yixuan Su
 Date: 2024/11/20 10:36
-File: Point_cloud_visualazation_size.py
+File: chessboard_center.py
 Description:
 """
 

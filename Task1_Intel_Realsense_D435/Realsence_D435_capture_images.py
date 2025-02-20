@@ -1,3 +1,11 @@
+"""
+Author: Yixuan Su
+Date: 2025/02/20 14:53
+File: Realsence_D435_capture_images.py
+Description:
+
+"""
+
 import pyrealsense2 as rs
 import numpy as np
 import cv2

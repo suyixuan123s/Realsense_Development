@@ -1,3 +1,11 @@
+"""
+Author: Yixuan Su
+Date: 2025/02/20 14:53
+File: capture_point_cloud.py
+Description:
+
+"""
+
 import pyrealsense2 as rs
 import numpy as np
 import open3d as o3d
@@ -78,7 +86,9 @@ def capture_point_cloud():
                 # break  # 退出循环，停止捕获
 
                 # 保存带颜色的点云到文件
-                o3d.io.write_point_cloud("E:\ABB-Project\ABB_wrs\suyixuan\ABB\depth_anything_v2\Point_cloud_Dataset\output_point_cloud01.ply", point_cloud)  # 保存点云为PLY格式文件
+                o3d.io.write_point_cloud(
+                    "E:\ABB-Project\ABB_wrs\suyixuan\ABB\depth_anything_v2\Point_cloud_Dataset\output_point_cloud01.ply",
+                    point_cloud)  # 保存点云为PLY格式文件
                 print("点云文件已保存: output_point_cloud01.ply")  # 输出保存成功信息
                 break  # 退出循环，停止捕获
     finally:

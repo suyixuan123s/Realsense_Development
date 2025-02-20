@@ -1,3 +1,11 @@
+"""
+Author: Yixuan Su
+Date: 2025/02/20 14:53
+File: capture_point_cloud_By_Depth_Intrinsic_demo1.py
+Description:
+
+"""
+
 import os
 import pyrealsense2 as rs
 import numpy as np
@@ -10,6 +18,7 @@ save_directory = r'E:\ABB-Project\ABB_wrs\suyixuan\ABB\depth_anything_v2\Point_c
 
 # 确保目录存在
 os.makedirs(save_directory, exist_ok=True)
+
 
 def generate_colored_point_cloud(color_image, depth_image, intrinsic_matrix):
     # 获取图像的尺寸，深度图是二维的 (height: 高度, width: 宽度)
@@ -60,7 +69,6 @@ config = rs.config()
 # 配置彩色和深度流，640x480 分辨率，30 帧率
 config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)
 config.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, 30)
-
 
 # config.enable_stream(rs.stream.depth, 1280, 720, rs.format.z16, 30)  # 启用深度流，分辨率640x480，帧率30fps
 # config.enable_stream(rs.stream.color, 1280, 720, rs.format.bgr8, 30)  # 启用彩色流，格式为BGR8，帧率30fps

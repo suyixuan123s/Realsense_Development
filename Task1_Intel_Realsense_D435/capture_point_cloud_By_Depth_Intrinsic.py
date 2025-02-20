@@ -1,8 +1,17 @@
+"""
+Author: Yixuan Su
+Date: 2025/02/20 14:53
+File: capture_point_cloud_By_Depth_Intrinsic.py
+Description:
+
+"""
+
 import os
 import pyrealsense2 as rs
 import numpy as np
 import open3d as o3d
 import cv2
+
 
 def generate_colored_point_cloud(color_image, depth_image, intrinsic_matrix):
     # 获取图像的尺寸，深度图是二维的 (height: 高度, width: 宽度)

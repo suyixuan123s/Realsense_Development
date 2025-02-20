@@ -1,10 +1,12 @@
 """
 Author: Yixuan Su
-Date: 2024/11/26 21:24
+Date: 2025/02/20 14:53
 File: crop_image_to_fixed_size.py
-Description: 
+Description:
+
 """
 import cv2
+
 
 def crop_image_to_fixed_size(image_path, target_width, target_height):
     """
@@ -40,6 +42,7 @@ def crop_image_to_fixed_size(image_path, target_width, target_height):
     cropped_image = image[start_y:start_y + target_height, start_x:start_x + target_width]
 
     return cropped_image
+
 
 # 示例使用
 if __name__ == "__main__":
