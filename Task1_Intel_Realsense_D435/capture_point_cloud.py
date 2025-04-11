@@ -16,11 +16,11 @@ def capture_point_cloud():
     # 配置RealSense相机的管道，设置深度和颜色流的格式和分辨率
     pipeline = rs.pipeline()  # 创建RealSense的管道对象，用于流数据
     config = rs.config()  # 配置对象
-    config.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, 30)  # 启用深度流，分辨率640x480，帧率30fps
-    config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)  # 启用彩色流，格式为BGR8，帧率30fps
+    # config.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, 30)  # 启用深度流，分辨率640x480，帧率30fps
+    # config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)  # 启用彩色流，格式为BGR8，帧率30fps
 
-    # config.enable_stream(rs.stream.depth, 1280, 720, rs.format.z16, 30)  # 启用深度流，分辨率640x480，帧率30fps
-    # config.enable_stream(rs.stream.color, 1280, 720, rs.format.bgr8, 30)  # 启用彩色流，格式为BGR8，帧率30fps
+    config.enable_stream(rs.stream.depth, 1280, 720, rs.format.z16, 30)  # 启用深度流，分辨率640x480，帧率30fps
+    config.enable_stream(rs.stream.color, 1280, 720, rs.format.bgr8, 30)  # 启用彩色流，格式为BGR8，帧率30fps
 
     # 对齐深度和颜色帧，以便将深度信息与颜色图像进行匹配
     align_to = rs.stream.color  # 对齐到彩色流

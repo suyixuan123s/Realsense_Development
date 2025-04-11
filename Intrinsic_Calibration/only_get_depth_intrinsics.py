@@ -30,28 +30,7 @@ def get_depth_camera_info(profile):
     print(f"Distortion coefficients: {depth_intrinsics.coeffs}")
 
 
-def create_camera_save_path(save_path=None):
-    """
-    创建保存并返回 D455 图像和深度信息的路径
-    Args:
-        save_path: 自定义路径, default=None, 默认运行文件的当前目录下
-
-    Returns:
-        color图存储路径, depth信息存储路径
-    """
-    if save_path is None:
-        save_path = os.getcwd()
-    time_path = f"{datetime.datetime.now():%Y_%m_%d_%H_%M_%S}".replace(":", "_")
-    color_path = os.path.join(save_path, time_path, 'rgb')
-    depth_path = os.path.join(save_path, time_path, 'depth')
-
-    os.makedirs(color_path, exist_ok=True)
-    os.makedirs(depth_path, exist_ok=True)
-    return color_path, depth_path
-
-
-# 示例主函数
-def main():
+if __name__ == "__main__":
     # 初始化RealSense管道
     pipeline = rs.pipeline()
     config = rs.config()
@@ -64,14 +43,5 @@ def main():
     # 获取并打印深度相机信息
     get_depth_camera_info(profile)
 
-    # 创建并打印保存路径
-    color_save_path, depth_save_path = create_camera_save_path()
-
-    # 在此处可以继续保存图像等操作...
-
     # 停止捕获
     pipeline.stop()
-
-
-if __name__ == "__main__":
-    main()
